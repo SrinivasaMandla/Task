@@ -24,19 +24,13 @@ centerImg.addEventListener('click', () => {
     imageContainer.classList.toggle('centered');
 });
 
-const redColor = document.getElementById('red-color');
-redColor.addEventListener('click', () => {
-    imageContainer.style.backgroundColor = 'red';
-});
-
-const greenColor = document.getElementById('green-color');
-greenColor.addEventListener('click', () => {
-    imageContainer.style.backgroundColor = 'green';
-});
-
-const yellowColor = document.getElementById('yellow-color');
-yellowColor.addEventListener('click', () => {
-    imageContainer.style.backgroundColor = 'yellow';
+document.querySelectorAll('.button-color').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const selectedColor = event.target.value;
+        if (selectedColor) {
+            imageContainer.style.backgroundColor = selectedColor;
+        }
+    });
 });
 
 const dropDown = document.getElementById('dropdown');
